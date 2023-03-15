@@ -1,0 +1,29 @@
+---
+domain: rl
+descriptors:
+  - key: auth_token
+    rate_limit:
+      requests_per_unit: 10
+      unit: minute
+#  - key: auth_token
+#    rate_limit:
+#      unit: minute
+#      requests_per_unit: 2
+#    descriptors:
+#      - key: bar
+#        rate_limit:
+#          unit: minute
+#          requests_per_unit: 3
+#      - key: bar
+#        value: bkthomps
+#        rate_limit:
+#          name: bkthomps
+#          unit: minute
+#          requests_per_unit: 1
+#      - key: bar
+#        value: banned
+#        rate_limit:
+#          name: banned_limit
+#          unit: minute
+#          requests_per_unit: 0
+
