@@ -48,7 +48,7 @@ func main() {
 		},
 	}
 
-	// Same authentication as A, different path
+	// Same path as A, different user
 	authedTargetB := vegeta.Target{
 		Method: "GET",
 		URL:    "http://localhost:8888/header",
