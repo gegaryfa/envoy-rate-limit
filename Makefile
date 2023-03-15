@@ -4,4 +4,7 @@ up:
 down:
 	docker-compose down
 
-.PHONY: up down
+load-test:
+	cd vegeta && go run main.go
+
+.PHONY: up down load-test

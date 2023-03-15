@@ -1,4 +1,17 @@
 # Envoy rate limit example
+To set up all the dependencies for this test: <br>
+`docker compose up`
+
+You can run the vegeta load test application, to see the rate limiting in action. <br>
+`make load-test`
+
+The rate limit service, should limit the requests based on the `Authorization` header, and allow up to 
+10 requests per minute per unique value. This can be configured in [example.config](./examples/ratelimit/config/example.yaml)
+
+To see how many requests are done by a specific authorization header: <br>
+- connect to the redis container
+- find the key that matches your request header. you can use `keys *` command to see all keys
+- getting the value of the key will show how mnay requests this key has done: `get <key>`
 
 ## Readings/blogs/examples
 
