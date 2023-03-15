@@ -11,7 +11,12 @@ The rate limit service, should limit the requests based on the `Authorization` h
 To see how many requests are done by a specific authorization header: <br>
 - connect to the redis container
 - find the key that matches your request header. you can use `keys *` command to see all keys
-- getting the value of the key will show how mnay requests this key has done: `get <key>`
+- getting the value of the key will show how manyy requests this key has done: `get <key>`
+
+### Monthly rate limits/ Quotas.
+At the branch [customer-rate-limit](https://github.com/gegaryfa/envoy-rate-limit/tree/custom_rate-limit), you can find 
+a solution where the reference rate limiter is added as a submodule and adjusted so it supports
+ monthly rate limits as well.
 
 ## Readings/blogs/examples
 
