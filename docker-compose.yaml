@@ -26,7 +26,8 @@ services:
       - ./examples/prom-statsd-exporter/conf.yaml:/etc/statsd-exporter/conf.yaml
 
   ratelimit:
-    image: envoyproxy/ratelimit:master
+    build:
+      context: ratelimit
     command: /bin/ratelimit
     ports:
       - 8080:8080
@@ -75,25 +76,6 @@ services:
       - "8001:8001"
     depends_on:
       - backend
-
-  # envoy-mock:
-  #   image: envoyproxy/envoy-dev:latest
-  #   entrypoint: "/usr/local/bin/envoy"
-  #   command:
-  #     - "--service-node mock"
-  #     - "--service-cluster mock"
-  #     - "--config-path /etc/envoy/envoy.yaml"
-  #     - "--concurrency 1"
-  #     - "--mode serve"
-  #     - "--log-level info"
-  #   volumes:
-  #     - ./examples/envoy/mock.yaml:/etc/envoy/envoy.yaml
-  #   networks:
-  #     - ratelimit-network
-  #   expose:
-  #     - "9999"
-  #   ports:
-  #     - "9999:9999"
 
   backend:
     build: backend
