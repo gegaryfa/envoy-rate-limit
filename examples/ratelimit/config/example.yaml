@@ -4,7 +4,7 @@ descriptors:
   - key: auth_token
     rate_limit:
       requests_per_unit: 10
-      unit: minute
+      unit: month
 #  - key: auth_token
 #    rate_limit:
 #      unit: minute
