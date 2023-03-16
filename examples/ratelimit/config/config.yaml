@@ -1,14 +1,20 @@
 ---
-domain: mongo_cps
+domain: rl
 descriptors:
-  - key: database
-    value: users
+  - key: auth_token
     rate_limit:
-      unit: second
-      requests_per_unit: 500
-
-  - key: database
-    value: default
+      name: freeTier
+      requests_per_unit: 10
+      unit: hour
+  - key: auth_token
+    value: client1
     rate_limit:
-      unit: second
-      requests_per_unit: 500
+      name: client1
+      unit: hour
+      requests_per_unit: 20
+  - key: auth_token
+    value: client2
+    rate_limit:
+      name: client2
+      unit: hour
+      requests_per_unit: 30

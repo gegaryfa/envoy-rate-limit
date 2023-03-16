@@ -6,7 +6,7 @@ You can run the vegeta load test application, to see the rate limiting in action
 `make load-test`
 
 The rate limit service, should limit the requests based on the `Authorization` header, and allow up to 
-10 requests per minute per unique value. This can be configured in [example.config](./examples/ratelimit/config/example.yaml)
+10 requests per minute per unique value. This can be configured in [config.config](./examples/ratelimit/config/config.yaml)
 
 To see how many requests are done by a specific authorization header: <br>
 - connect to the redis container
