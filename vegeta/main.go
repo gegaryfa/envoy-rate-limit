@@ -44,7 +44,7 @@ func main() {
 		Method: "GET",
 		URL:    "http://localhost:8888/header",
 		Header: http.Header{
-			"Authorization": []string{"Bearer fooA"},
+			"Authorization": []string{"freeTier"},
 		},
 	}
 
@@ -53,7 +53,7 @@ func main() {
 		Method: "GET",
 		URL:    "http://localhost:8888/header",
 		Header: http.Header{
-			"Authorization": []string{"Bearer fooB"},
+			"Authorization": []string{"client1"},
 		},
 	}
 
@@ -62,11 +62,11 @@ func main() {
 		Method: "GET",
 		URL:    "http://localhost:8888/header",
 		Header: http.Header{
-			"Authorization": []string{"Bearer barC"},
+			"Authorization": []string{"client2"},
 		},
 	}
 
-	runTest("single authed path header fooA, target 10rpm", 0.1, authedTargetA)
-	runTest("single authed path header fooB, target 10rpm", 0.10, authedTargetB)
-	runTest("single authed path header barC, target 10rpm", 0.10, authedTargetC)
+	runTest("single authed path header freeTier, target 10rpm", 0.1, authedTargetA)
+	runTest("single authed path header client1, target 20rpm", 0.20, authedTargetB)
+	runTest("single authed path header client2, target 30rpm", 0.30, authedTargetC)
 }
